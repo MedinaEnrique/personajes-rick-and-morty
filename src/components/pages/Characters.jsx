@@ -16,15 +16,19 @@ const Characters = () => {
                 console.error(error);
             });
     }, []);
+    const deleteCard = (id) => {
 
+        const result = characters.filter(character => character.id != id);
+        setCharacters(result);
+    }
     return (
         <>
-            <h3 className="text-center w-100 m-0">Personajes <Link to={"/new-character"}>
-            <i id="iconplus" className="fs-3 fw-bold">
-              +
-            </i>
-          </Link></h3>
-          
+            <h3 className="text-center w-100 m-0">Personajes <Link to={"/new-character"} className="text-decoration-none">
+                <i id="iconplus" className=" fw-bold text-success" >
+                    +
+                </i>
+            </Link></h3>
+
             <div style={{
                 width: "100%",
                 display: "flex",
@@ -37,7 +41,7 @@ const Characters = () => {
                 {
                     characters.map((character) => {
                         return (
-                          <CardCharacters character={character} key ={character.id}/> 
+                            <CardCharacters character={character} key={character.id} deleteCard={() => deleteCard(character.id)} />
                         )
                     })
                 }

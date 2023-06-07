@@ -1,7 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Characters from './components/pages/Characters'
-import NewCharacter from './components/NewCharacter'
+import EditCharacter from './components/pages/EditCharacter'
+import NewCharacter from './components/pages/NewCharacter'
+
 
 function App() {
 
@@ -9,7 +11,9 @@ function App() {
    <BrowserRouter>
     <Routes>
       <Route path="/" element={ <Characters/> } />
-      <Route path="//new-character" element={ <NewCharacter/> } />
+      <Route path="/new-character" element={ <NewCharacter/> } />
+      <Route path="/edit-character" element={ <EditCharacter/> } />
+
 
     </Routes>
    
