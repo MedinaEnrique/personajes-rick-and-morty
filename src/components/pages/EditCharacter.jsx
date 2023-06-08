@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import ListContext from "../../context/ListContext";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -13,7 +13,6 @@ const EditCharacter = () => {
     useEffect(() => {
 
         if (characters) {
-
             setImage(characters[indexEdit].image)
             setName(characters[indexEdit].name)
             setSpecies(characters[indexEdit].species)
@@ -43,7 +42,7 @@ const EditCharacter = () => {
     }
 
     return (
-        <form onSubmit={editCharacter} className="col-sm-5 mx-auto border rounded-1 shadow mt-5 border-success">
+        <form onSubmit={editCharacter} className="col-sm-5 mx-auto border rounded-1 shadow mt-5 border-dark">
             <h3 className="text-center text-success">Edit Character</h3>
             <div className="mb-3">
                 <label htmlFor="imgUrl" className="form-label">New URL image</label>

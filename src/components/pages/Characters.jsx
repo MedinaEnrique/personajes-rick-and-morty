@@ -27,22 +27,14 @@ const Characters = () => {
         setCharacters(result);
     }
     return (
-        <>
-            <h3 className="text-center w-100 m-0">Personajes <Link to={"/new-character"} className="text-decoration-none">
-                <i id="iconplus" className=" fw-bold text-success" >
-                    +
-                </i>
-            </Link></h3>
+        <div className="container ">
+            <div className=" fw-bold text-center w-100 m-0 bg-verde-agua fs-3 text-dark d-flex align-items-center justify-content-center" >
+                Personajes
+                <Link to={"/new-character"} className="text-decoration-none">
+                    <i className=" bi bi-plus fw-bold text-dark fs-2" > </i>
+                </Link></div>
 
-            <div style={{
-                width: "100%",
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "center",
-                alignItems: "center",
-                gap: "20px",
-                padding: "20px"
-            }}>
+            <div className="row row-cols-1 row-cols-sm-4 g-3 mt-3">
                 {
                     characters && characters.map((character, index) => {
                         return (
@@ -51,7 +43,7 @@ const Characters = () => {
                     })
                 }
             </div>
-        </>
+        </div>
     )
 }
 

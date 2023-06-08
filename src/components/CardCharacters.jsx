@@ -13,20 +13,22 @@ const CardCharacters = ({ character, deleteCard, index }) => {
   }
 
   return (
-    <div style={{ width: 250 }}>
-      <div className="card d-flex border-success">
-        <img src={image} height={170} className="card-img-top" alt="character-image" />
-        <div className="card-body">
-          <h3 className="card-title">{name}</h3>
-          <h5>{species}</h5>
-          <div className="text-center">
-
-            <i className="bi bi-pencil fs-4 me-2 text-dark" onClick={editCharacter}></i>
-            <i className="bi bi-trash fs-4" onClick={deleteCard}></i>
+    <>
+      <div className="col d-flex align-items-stretch">
+        <div className="card w-100 border-dark bg-verde-agua">
+          <img src={image} height={170} className="card-img-top" alt="character-image" />
+          <div className="card-body">
+            <h3 className="card-title">{name}</h3>
+            <h5>{species}</h5>
           </div>
+            <div className="text-center card-footer">
+        
+              <i className="bi bi-pencil fs-4 me-2 text-white" onClick={editCharacter}></i>
+              <i className="bi bi-trash fs-4 text-white" onClick={deleteCard}></i>
+            </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
