@@ -1,3 +1,16 @@
-.bg-verde-agua{
+.bg-verde-agua,
+.active-page>.page-link {
     background-color: #5f9ea0;
+}
+
+.active-page>.page-link{
+    color: white;
+}
+
+#container {
+    margin: 1rem;
+}
+
+.items {
+    margin-bottom: 1rem;
 }

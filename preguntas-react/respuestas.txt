@@ -6,5 +6,5 @@ Tema 2
 El componente Counter cuenta con un contador que se inializa en "0" y con dos botones, uno para aumentar el valor y el otro para disminuir.
 
 Tema 3
-La verdad que aun no hemos utilizado el useContext, pero investigando un poco creo lque lo que hace el componente UserProfile en este caso es consumir el estado 
+La verdad que aun no hemos utilizado el useContext, pero investigando un poco creo que lo que hace el componente UserProfile en este caso es consumir el estado 
 de forma mas general sin tener que utilizar o pasar por props

@@ -18,7 +18,6 @@ const EditCharacter = () => {
             setSpecies(characters[indexEdit].species)
         }
     }, [characters])
-
     const validateForm = () => {
         if (
             image.trim() === "" ||
@@ -42,44 +41,46 @@ const EditCharacter = () => {
     }
 
     return (
-        <form onSubmit={editCharacter} className="col-sm-5 mx-auto border rounded-1 shadow mt-5 border-dark">
-            <h3 className="text-center text-success">Edit Character</h3>
-            <div className="mb-3">
-                <label htmlFor="imgUrl" className="form-label">New URL image</label>
-                <input type="text"
-                    className="form-control"
-                    id="image"
-                    value={image}
-                    onChange={(e) => setImage(e.target.value)} />
-            </div>
-            <div className="mb-3">
-                <label htmlFor="characterName" className="form-label">New Name</label>
-                <input type="text"
-                    className="form-control"
-                    id="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-            </div>
-            <div className="mb-3">
-                <label htmlFor="species" className="form-label">Specie</label>
-                <select
-                    className="form-control"
-                    id="species"
-                    value={species}
-                    onChange={(e) => setSpecies(e.target.value)}
-                >
-                    <option value=""></option>
-                    <option value="Human">Human</option>
-                    <option value="Alien">Alien</option>
-                </select>
-            </div>
-            <div className="text-center">
-                <button type="submit"
-                    className="btn btn-success px-2"
-                    disabled={!validateForm()}
-                >Confirm Changes</button>
-            </div>
+        <form onSubmit={editCharacter} className="col-sm-5 mx-auto border rounded-3 shadow mt-5 border-dark">
+            <h3 className="text-center bg-verde-agua ">Edit Character</h3>
+           <div className="p-3">
+             <div className="mb-3">
+                 <label htmlFor="imgUrl" className="form-label">New URL image</label>
+                 <input type="text"
+                     className="form-control"
+                     id="image"
+                     value={image}
+                     onChange={(e) => setImage(e.target.value)} />
+             </div>
+             <div className="mb-3">
+                 <label htmlFor="characterName" className="form-label">New Name</label>
+                 <input type="text"
+                     className="form-control"
+                     id="name"
+                     value={name}
+                     onChange={(e) => setName(e.target.value)}
+                 />
+             </div>
+             <div className="mb-3">
+                 <label htmlFor="species" className="form-label">Specie</label>
+                 <select
+                     className="form-control"
+                     id="species"
+                     value={species}
+                     onChange={(e) => setSpecies(e.target.value)}
+                 >
+                     <option value=""></option>
+                     <option value="Human">Human</option>
+                     <option value="Alien">Alien</option>
+                 </select>
+             </div>
+             <div className="text-center">
+                 <button type="submit"
+                      className="btn bg-verde-agua px-2"
+                     disabled={!validateForm()}
+                 >Confirm Changes</button>
+             </div>
+           </div>
         </form>
     )
 }
