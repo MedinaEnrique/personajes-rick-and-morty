@@ -1,20 +1,25 @@
 
-import { useEffect, useState } from "react"
+import { useContext, useEffect } from "react"
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import CardCharacters from "../CardCharacters";
+import ListContext from "../../context/ListContext";
 
 const Characters = () => {
-    const [characters, setCharacters] = useState([])
+    const { characters, setCharacters } = useContext(ListContext);
+
 
     useEffect(() => {
-        axios.get("https://rickandmortyapi.com/api/character")
-            .then(response => {
-                setCharacters(response.data.results);
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        if (characters === null) {
+
+            axios.get("https://rickandmortyapi.com/api/character")
+                .then(response => {
+                    setCharacters(response.data.results);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        }
     }, []);
     const deleteCard = (id) => {
 
@@ -39,9 +44,9 @@ const Characters = () => {
                 padding: "20px"
             }}>
                 {
-                    characters.map((character) => {
+                    characters && characters.map((character, index) => {
                         return (
-                            <CardCharacters character={character} key={character.id} deleteCard={() => deleteCard(character.id)} />
+                            <CardCharacters character={character} index={index} key={character.id} deleteCard={() => deleteCard(character.id)} />
                         )
                     })
                 }
